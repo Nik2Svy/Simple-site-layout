@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:test_lab/utils/constants.dart';
 import 'package:test_lab/widget/drawer_list.dart';
+import 'package:test_lab/widget/grid_equipment_card.dart';
 import 'package:test_lab/widget/my_appbar.dart';
+import 'package:test_lab/widget/my_dropdown_button.dart';
 import 'package:test_lab/widget/my_footer.dart';
+import 'package:test_lab/widget/on_hover_eq_card.dart';
 import 'package:test_lab/widget/responsive.dart';
 
 class CatalogPage extends StatelessWidget {
-  const CatalogPage({Key? key}) : super(key: key);
+  CatalogPage({Key? key}) : super(key: key);
+
+  //var _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +52,7 @@ class CatalogPage extends StatelessWidget {
                   return const SizedBox();
                 }
               }()),
-              bodyCatalog(),
+              bodyCatalog(context),
               myFooter(
                 context,
               ),
@@ -59,49 +64,47 @@ class CatalogPage extends StatelessWidget {
   }
 }
 
-bodyCatalog() {
+bodyCatalog(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: SizedBox(
         width: kContetnWidth,
-        // height: 1080,
+        height: kContentHeight,
+        //_getSize(CatalogPage()._key)?.height ?? 1000,
         child: Row(
           children: [
-            Flexible(
-              child: sideCatalog(),
-            ),
+            (() {
+              if (ResponsiveWidget.isLargeScreen(context) ||
+                  ResponsiveWidget.isMediumScreen(context)) {
+                return Flexible(
+                  child: MyDropdownButton(),
+                );
+              } else {
+                return const SizedBox();
+              }
+            }()),
             Flexible(
               child: gridEquipment_01(),
-            )
+              flex: 4,
+            ),
           ],
         )),
   );
 }
 
-sideCatalog() {
-  return SizedBox(
-    height: 300,
-    child: ListView.builder(
-        itemCount: urlImagesEquipment.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4),
-            child: OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                foregroundColor: kPrimaryColore,
-                padding: const EdgeInsets.all(16.0),
-                // textStyle: const TextStyle(fontSize: 20),
-              ),
-              onPressed: () {},
-              child: Text(
-                urlImagesEquipment[index].elementAt(1),
-              ),
-            ),
-          );
-        }),
+gridEquipment_01() {
+  return GridView.custom(
+    // shrinkWrap: true,
+    childrenDelegate: SliverChildBuilderDelegate(
+      (context, index) => OnHoverCard(
+        child: equipmentCard(context, index),
+      ),
+      childCount: urlImagesEquipment.length,
+    ),
+    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+      maxCrossAxisExtent: 360,
+      mainAxisSpacing: 5,
+      crossAxisSpacing: 5,
+    ),
   );
 }
-
-gridEquipment_01() {}
-
-mainCatalogCards() {}

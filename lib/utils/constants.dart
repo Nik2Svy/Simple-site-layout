@@ -11,6 +11,7 @@ const kButtonColor = Color.fromARGB(255, 0, 0, 0);
 const kFooterColor = Color.fromARGB(255, 255, 255, 255);
 
 const kContetnWidth = 950.0;
+const kContentHeight = 1000.0;
 // обязательно должно быть ключ: значение
 const contactInformation = {
   'kPhoneNumber': '+9-999-999-99-99',
@@ -39,24 +40,26 @@ final sectionNames = [
   'Наши офисы',
 ];
 
+// https://picsum.photos/300/300
 final urlImagesEquipment = [
-  {'https://picsum.photos/300/300', 'Анализаторы металлов'},
-  {'https://picsum.photos/300/300', 'Толщиномеры покрытий '},
-  {'https://picsum.photos/300/300', 'Анализаторы металлов'},
-  {'https://picsum.photos/300/300', 'Толщиномеры покрытий '},
-  {'https://picsum.photos/300/300', 'Анализаторы металлов'},
-  {'https://picsum.photos/300/300', 'Толщиномеры покрытий '},
-  {'https://picsum.photos/300/300', 'Анализаторы металлов'},
-  {'https://picsum.photos/300/300', 'Толщиномеры покрытий '},
+  {'assets/image/placeimg_300_300_arch.jpg', 'Анализаторы металлов'},
+  {'assets/image/placeimg_300_300_arch.jpg', 'Толщиномеры покрытий '},
+  {'assets/image/placeimg_300_300_arch.jpg', 'Анализаторы металлов'},
+  {'assets/image/placeimg_300_300_arch.jpg', 'Толщиномеры покрытий '},
+  {'assets/image/placeimg_300_300_arch.jpg', 'Анализаторы металлов'},
+  {'assets/image/placeimg_300_300_arch.jpg', 'Толщиномеры покрытий '},
+  {'assets/image/placeimg_300_300_arch.jpg', 'Анализаторы металлов'},
+  {'assets/image/placeimg_300_300_arch.jpg', 'Толщиномеры покрытий '},
 ];
 
+// https://picsum.photos/1920/1080
 final urlImages = [
-  'https://picsum.photos/1920/1080',
-  'https://picsum.photos/1920/1080',
-  'https://picsum.photos/1920/1080',
-  'https://picsum.photos/1920/1080',
-  'https://picsum.photos/1920/1080',
-  'https://picsum.photos/1920/1080',
+  'assets/image/placeimg_1920_1080.jpg',
+  'assets/image/placeimg_1920_1080.jpg',
+  'assets/image/placeimg_1920_1080.jpg',
+  'assets/image/placeimg_1920_1080.jpg',
+  'assets/image/placeimg_1920_1080.jpg',
+  'assets/image/placeimg_1920_1080.jpg',
 ];
 final textSlide = [
   {

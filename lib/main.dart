@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: myTheme(),
-      home: const HomePage(),
+      home: CatalogPage(),
       // HomePage(),
       onGenerateRoute: (settings) {
         switch (settings.name) {
@@ -27,8 +27,7 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(
                 builder: (context) => const AboutCompanyPage());
           case catalogPage:
-            return MaterialPageRoute(
-                builder: (context) => const AboutCompanyPage()); //CatalogPage()
+            return MaterialPageRoute(builder: (context) => CatalogPage());
         }
       },
     );
