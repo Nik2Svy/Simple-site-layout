@@ -111,7 +111,7 @@ bodyAboutCompany(BuildContext context) {
               vertical: 15,
             ),
             child: Text(
-              sectionNames[1],
+              actionButtomNames[1],
               style: Theme.of(context).textTheme.headline4,
             ),
           ),

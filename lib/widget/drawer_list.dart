@@ -17,7 +17,12 @@ listOfListTile(BuildContext context) {
               kMainLogo,
             ),
             iconSize: 86,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.popAndPushNamed(
+                context,
+                homePage,
+              );
+            },
           ),
           const Text(
             kMainName,
@@ -38,7 +43,7 @@ listOfListTile(BuildContext context) {
         onTap: () {
           Navigator.popAndPushNamed(
             context,
-            aboutCompanyPage,
+            menuActButtomPages[i],
           );
         },
       ),

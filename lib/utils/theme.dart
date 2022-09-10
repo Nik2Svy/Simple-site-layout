@@ -4,6 +4,7 @@ import 'constants.dart';
 // Тема всего сайта
 @override
 ThemeData myTheme() => ThemeData(
+      unselectedWidgetColor: kPrimaryColore,
       brightness: Brightness.light,
       primaryColor: kPrimaryColore,
       scaffoldBackgroundColor: kBackgroundColor,

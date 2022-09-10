@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:test_lab/screens/about_company.dart';
 import 'package:test_lab/utils/constants.dart';
 import 'package:test_lab/widget/drawer_list.dart';
-import 'package:test_lab/widget/grid_equipment_card.dart';
 import 'package:test_lab/widget/my_appbar.dart';
-import 'package:test_lab/widget/my_dropdown_button.dart';
 import 'package:test_lab/widget/my_footer.dart';
-import 'package:test_lab/widget/on_hover_eq_card.dart';
+import 'package:test_lab/widget/my_form.dart';
 import 'package:test_lab/widget/responsive.dart';
 
-class CatalogPage extends StatelessWidget {
-  CatalogPage({Key? key}) : super(key: key);
+class ServicePage extends StatelessWidget {
+  ServicePage({Key? key}) : super(key: key);
 
   //var _key = GlobalKey();
 
@@ -52,16 +51,7 @@ class CatalogPage extends StatelessWidget {
                   return const SizedBox();
                 }
               }()),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 15,
-                ),
-                child: Text(
-                  actionButtomNames[2],
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-              ),
-              bodyCatalog(context),
+              bodyServicePage(context),
               myFooter(
                 context,
               ),
@@ -73,47 +63,40 @@ class CatalogPage extends StatelessWidget {
   }
 }
 
-bodyCatalog(BuildContext context) {
+bodyServicePage(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: SizedBox(
-        width: kContetnWidth,
-        height: kContentHeight,
-        //_getSize(CatalogPage()._key)?.height ?? 1000,
-        child: Row(
-          children: [
-            (() {
-              if (ResponsiveWidget.isLargeScreen(context) ||
-                  ResponsiveWidget.isMediumScreen(context)) {
-                return Flexible(
-                  child: MyDropdownButton(),
-                );
-              } else {
-                return const SizedBox();
-              }
-            }()),
-            Flexible(
-              child: gridEquipment_01(),
-              flex: 4,
+      width: kContetnWidth,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 15,
             ),
-          ],
-        )),
-  );
-}
-
-gridEquipment_01() {
-  return GridView.custom(
-    // shrinkWrap: true,
-    childrenDelegate: SliverChildBuilderDelegate(
-      (context, index) => OnHoverCard(
-        child: equipmentCard(context, index),
+            child: Text(
+              actionButtomNames[3],
+              style: Theme.of(context).textTheme.headline4,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 15,
+            ),
+            child: RichText(
+                text: TextSpan(
+              text: aboutCompany,
+              style: Theme.of(context).textTheme.bodyText1,
+            )),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 20,
+            ),
+            child: MyForm(),
+          ),
+        ],
       ),
-      childCount: urlImagesEquipment.length,
-    ),
-    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-      maxCrossAxisExtent: 360,
-      mainAxisSpacing: 5,
-      crossAxisSpacing: 5,
     ),
   );
 }

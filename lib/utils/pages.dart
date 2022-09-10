@@ -4,17 +4,11 @@
 const String homePage = '/homePage';
 const String aboutCompanyPage = '/aboutCompanyPage';
 const String catalogPage = '/catalogPage';
-const String solutionsPage = '/aboutCompanyPage';
-const String demoPage = '/homePage';
-const String galleryPage = '/aboutCompanyPage';
-const String contactsPage = '/homePage';
+const String servicePage = '/servicePage';
 
 const List menuActButtomPages = [
   homePage,
   aboutCompanyPage,
   catalogPage,
-  solutionsPage,
-  demoPage,
-  galleryPage,
-  contactsPage,
+  servicePage,
 ];

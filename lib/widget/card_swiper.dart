@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_lab/utils/constants.dart';
+import 'package:test_lab/utils/pages.dart';
 import 'package:test_lab/widget/responsive.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -129,7 +130,12 @@ class MyCardSwiperState extends State<MyCardSwiper> {
       ),
       child: MaterialButton(
         visualDensity: const VisualDensity(horizontal: 2, vertical: 2),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.popAndPushNamed(
+            context,
+            catalogPage,
+          );
+        },
         child: Text(
           textSlide[itemIndex].elementAt(2),
           style: const TextStyle(

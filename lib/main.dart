@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_lab/screens/about_company.dart';
 import 'package:test_lab/screens/equipment_catalog.dart';
+import 'package:test_lab/screens/service_page.dart';
 import 'package:test_lab/utils/pages.dart';
 import 'package:test_lab/utils/theme.dart';
 import 'package:test_lab/screens/home_page.dart';
@@ -17,8 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: myTheme(),
-      home: CatalogPage(),
-      // HomePage(),
+      home: const HomePage(),
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case homePage:
@@ -28,6 +28,8 @@ class MyApp extends StatelessWidget {
                 builder: (context) => const AboutCompanyPage());
           case catalogPage:
             return MaterialPageRoute(builder: (context) => CatalogPage());
+          case servicePage:
+            return MaterialPageRoute(builder: (context) => ServicePage());
         }
       },
     );

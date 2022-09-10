@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_lab/utils/constants.dart';
+import 'package:test_lab/utils/pages.dart';
 import 'package:test_lab/widget/my_appbar.dart';
 import 'package:test_lab/widget/menu_act_but.dart';
 import 'package:test_lab/widget/responsive.dart';
@@ -38,7 +39,12 @@ largeFooter(BuildContext context) {
           kMainLogo,
         ),
         iconSize: 86,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.popAndPushNamed(
+            context,
+            homePage,
+          );
+        },
       ),
       const VerticalDivider(
         color: kBackgroundColor,
@@ -104,7 +110,12 @@ Widget smallFooter(BuildContext context) {
           kMainLogo,
         ),
         iconSize: 86,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.popAndPushNamed(
+            context,
+            homePage,
+          );
+        },
       ),
       const VerticalDivider(
         color: kBackgroundColor,
